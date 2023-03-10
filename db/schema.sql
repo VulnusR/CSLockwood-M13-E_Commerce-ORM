@@ -11,3 +11,13 @@ CREATE TABLE categories (
   PRIMARY KEY (id)
 );
 
+-- Products table
+CREATE TABLE products (
+  id INT NOT NULL AUTO_INCREMENT,
+  product_name VARCHAR(30) NOT NULL,
+  price DECIMAL(10,2) NOT NULL,
+  stock INT NOT NULL,
+  category_id INT,
+  PRIMARY KEY (id),
+  FOREIGN KEY (category_id) REFERENCES categories (id) ON DELETE CASCADE
+);
