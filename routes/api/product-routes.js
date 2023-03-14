@@ -42,6 +42,16 @@ router.post('/', (req, res) => {
       tagIds: [1, 2, 3, 4]
     }
   */
+
+  const { product_name, price, stock, tagIds } = req.body;
+  
+  // Check that required fields are present
+  if (!product_name || !price || !stock) {
+    res.status(400).json({ message: "Missing required fields" });
+    return;
+  }
+
+
   Product.create(req.body)
     .then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
