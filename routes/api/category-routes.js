@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
+http://localhost:3001/api/categories
 
 router.get('/', (req, res) => {
   // find all categories
