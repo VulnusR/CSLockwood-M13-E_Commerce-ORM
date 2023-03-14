@@ -64,10 +64,17 @@ router.put('/:id', async (req, res) => {
       return;
     }
 
+    console.log(updatedCategory, "updated category"); 
+
+
+
     res.status(200).json(updatedCategory);
   }
 
+
+  
   catch (err) {
+    console.log(err, "wtf");
     res.status(500).json(err);
   }
 });
